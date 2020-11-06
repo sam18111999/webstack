@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="company">
+	<xs:complexType>
+	    <xs:sequence>
+	        <xs:element name="employee" maxOccurs="unbounded">
+	        	<xs:complexType>
+                                    <xs:attribute name="ID" type="xs:string" />
+				    <xs:sequence>
+                                                 <xs:element name="ID"  type="xs:string"/>
+                                                 <xs:unique name="EmployeeIDKey">
+                                                    <xs:selector xpath="./employee" />
+                                                    <xs:field xpath="@ID" />
+                                                 </xs:unique>
+                                                <xs:element name="name"  type="xs:string"/>
+						<xs:element name="age"  type="xs:integer"/>
+				                <xs:element name="salary" minOccurs="50000" maxOccurs="200000" type="xs:integer"/>
+				                <xs:element name="email"  type="xs:string"/>
+				                <xs:element name="phone"  type="xs:integer"/>
+            			                <xs:element name="designation"  type="xs:string"/>
+                                                <xs:element name="promotion"  type="xs:string"/>
+				    </xs:sequence>
+				</xs:complexType>
+	        </xs:element>
+	    </xs:sequence>
+	</xs:complexType>
+</xs:element>
+</xs:schema>

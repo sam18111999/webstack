@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="company.xsl"?>
+<company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="company.xsd"> 
+	
+	<employee>
+                <name>Samarth</name>
+		<age>22</age>
+		<salary>80,000/-</salary>
+		<email>sam99@gmail.com</email>
+		<phone>+91 1234567891</phone>
+		<designation>sales manager</designation>
+                <promotion>               </promotion>
+        </employee>
+        <employee>
+                <name>Emmanuel</name>
+		<age>23</age>
+		<salary>50,000/-</salary>
+		<email>emmanuel123@gmail.com</email>
+		<phone>+91 1234567891</phone>
+		<designation>IT manager</designation>
+                <promotion>               </promotion>
+        </employee>
+        <employee>
+                <name>Rakshith R</name>
+		<age>25</age>
+		<salary>1,00,000/-</salary>
+		<email>rakshith123@gmail.com</email>
+		<phone>+91 1234567891</phone>
+		<designation>ux team lead</designation>
+                <promotion>               </promotion>
+        </employee>
+         <employee>
+                <name>Sourav G</name>
+		<age>24</age>
+		<salary>2,00,000/-</salary>
+		<email>sourav123@gmail.com</email>
+		<phone>+91 1234567891</phone>
+		<designation>vice president</designation>
+                <promotion>               </promotion>
+        </employee>
+       
+	
+</company>
