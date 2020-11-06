@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="courses.xsl"?>
+<courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="courses.xsd"> 
+	
+	<register>
+		<age>18</age>
+		<course>Python</course>
+		<instructor>James</instructor>
+		<mode>ONLINE</mode>
+		<time>9:00 AM</time>
+
+	</register>
+       <register>
+		<age>19</age>
+		<course>Dot Net</course>
+		<instructor>William</instructor>
+		<mode>ONLINE</mode>
+		<time>10:00 AM</time>
+
+	</register>
+         <register>
+		<age>18</age>
+		<course>C Programming</course>
+		<instructor>VIJAY</instructor>
+		<mode>ONLINE</mode>
+		<time>11:00 AM</time>
+
+	</register>
+         <register>
+		<age>18</age>
+		<course>C++ Programming</course>
+		<instructor>ROHIT</instructor>
+		<mode>ONLINE</mode>
+		<time>6:00 PM</time>
+
+	</register>
+         <register>
+		<age>21</age>
+		<course>Data Structures</course>
+		<instructor>EMMANUEL</instructor>
+		<mode>ONLINE</mode>
+		<time>5:00 PM</time>
+
+	</register>
+	 <register>
+		<age>18</age>
+		<course>Computer Graphics</course>
+		<instructor>RAKSHITH</instructor>
+		<mode>OFFLINE</mode>
+		<time>4:00 PM</time>
+
+	</register>
+         <register>
+		<age>21</age>
+		<course>Data Science</course>
+		<instructor>SWATHI</instructor>
+		<mode>ONLINE</mode>
+		<time>9:00 AM</time>
+
+	</register>
+         <register>
+		<age>18</age>
+		<course>Machine Learning</course>
+		<instructor>NITHIN</instructor>
+		<mode>OFFLINE</mode>
+		<time>7:00 PM</time>
+
+	</register>
+	
+	
+</courses>
