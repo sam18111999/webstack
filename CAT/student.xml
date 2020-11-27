@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<christ>
+	<cs>
+		<stu-name>Samarth</stu-name>
+		<stu-branch>Computer Science</stu-branch>
+        <stu-college>Christ</stu-college>
+		<stu-email>ss123@gmail.com</stu-email>
+
+	</cs>
+    <cs>
+		<stu-name>Suresh</stu-name>
+		<stu-branch>Physics</stu-branch>
+        <stu-college>PES</stu-college>
+		<stu-email>sr223@gmail.com</stu-email>
+
+	</cs>
+    <cs>
+		<stu-name>Rakesh</stu-name>
+		<stu-branch>Chemistry</stu-branch>
+        <stu-college>Oxford</stu-college>
+		<stu-email>rak456@gmail.com</stu-email>
+
+	</cs>
+	
+</christ>

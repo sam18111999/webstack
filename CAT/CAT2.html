@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM</title>
+    <script> 
+        function Func() { 
+            var name =  
+                document.forms["RegForm"]["Name"]; 
+            var email =  
+                document.forms["RegForm"]["EMail"]; 
+            var phone =  
+                document.forms["RegForm"]["Telephone"]; 
+            var state =  
+                document.forms["RegForm"]["State"];
+            var branch =  
+                document.forms["RegForm"]["Branch"];
+            var uniname =  
+            document.forms["RegForm"]["Uniname"];   
+            var password =  
+                document.forms["RegForm"]["Password"]; 
+            var address =  
+                document.forms["RegForm"]["Address"]; 
+
+            if (name.value == "") { 
+                window.alert("Please enter your name."); 
+                name.focus(); 
+                return false; 
+            } 
+
+            if (address.value == "") { 
+                window.alert("Please enter your address."); 
+                address.focus(); 
+                return false; 
+            } 
+
+            if (email.value == "") { 
+                window.alert( 
+                  "Please enter a valid e-mail address."); 
+                email.focus(); 
+                return false; 
+            } 
+            if (phone.value == "") { 
+                window.alert( 
+                  "Please enter your telephone number."); 
+                phone.focus(); 
+                return false; 
+            } 
+            if (state.value == "") { 
+                window.alert( 
+                  "Please enter a valid State."); 
+                state.focus(); 
+                return false; 
+            } 
+            if (branch.value == "") { 
+                window.alert( 
+                  "Please enter a valid branch name."); 
+                branch.focus(); 
+                return false; 
+            } 
+            if (uniname.value == "") { 
+                window.alert( 
+                  "Please enter a valid univirsity name."); 
+                uniname.focus(); 
+                return false; 
+            } 
+            if (password.value == "") { 
+                window.alert("Please enter your password"); 
+                password.focus(); 
+                return false; 
+            } 
+
+
+            return true; 
+        } 
+    </script> 
+<style> 
+body{
+    background-image: url(img2.jpg);
+}
+           
+    input[type=text] {
+background-color: #3CBC8D;
+color: white;
+}
+input[type=text]:focus {
+background-color: lightblue;
+}
+    form { 
+        margin: 0 auto; 
+        width: 0 auto; 
+    } 
+    input[type=button], input[type=submit], input[type=reset] {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+ table,th,td
+    {
+     border:1px solid rgb(21, 255, 0);
+    }
+    th,td{
+        padding: 5px;
+    }
+
+</style> 
+</head>
+<body>
+    <h1>REGISTRATION FORM FOR TECHOVID</h1>
+    <form name="RegForm" action="/submit.txt" 
+              onsubmit="return Func()" method="post"> 
+            <p><b>Name:</b> <input type="text" 
+                            size="50" name="Name" /></p> 
+            <br /> 
+            <p><b>Address:</b> <input type="text" 
+                               size="50" name="Address" /> 
+          </p> 
+            <br /> 
+            <p><b>E-mail Address:</b> <input type="text" 
+                            size="50" name="EMail" /></p> 
+            <br /> 
+            <p><b>Password:</b> <input type="text" 
+                         size="50" name="Password" /></p> 
+            <br /> 
+            <p><b>State:</b> <input type="text" 
+                size="50" name="State" /></p> 
+            <br /> 
+            <p><b>Branch:</b> <input type="text" 
+                size="50" name="Branch" /></p> 
+            <br /> 
+            <p><b>University Name:</b> <input type="text" 
+                size="50" name="Uniname" /></p> 
+            <br /> 
+
+            <p><b>Telephone:</b> <input type="text" 
+                        size="50" name="Telephone" /></p> 
+            <br /> 
+            <p> 
+                <input type="submit" 
+                       value="SEND" name="Submit" /> 
+                <input type="reset" 
+                       value="RESET" name="Reset" /> 
+            </p> 
+        </form> 
+        <button type="button" onclick="loadXML()">Get Student Details</button>
+    <br><br>
+    <table id="demo"></table>
+    <script>
+        function loadXML()
+        {
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function()
+            {
+                if(this.readyState==4&&this.status==200)
+                {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET","student.xml",false);
+            xhttp.send();
+        }
+        function myFunction(xml)
+        {
+            var i;
+            var xmlDoc=xml.responseXML;
+            var t="<tr><th>STU-NAME</th><th>STU-COLLEGE</th></tr>";
+            var x=xmlDoc.getElementsByTagName("cs");
+            for(i=0;i<x.length;i++)
+            {
+                t +="<tr><td>" +
+                x[i].getElementsByTagName("stu-name")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("stu-college")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML=t;
+        }
+    </script>
+    
+</body>
+</html>
