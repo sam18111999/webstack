@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<christ>
+	<cs>
+		<course-name>Python</course-name>
+		<course-mode>Online</course-mode>
+        <course-articles>140</course-articles>
+		<course-credits>2</course-credits>
+
+	</cs>
+    <cs>
+		<course-name>C Programming</course-name>
+		<course-mode>Offline</course-mode>
+        <course-articles>160</course-articles>
+		<course-credits>2</course-credits>
+
+	</cs>
+    <cs>
+		<course-name>Java Programming</course-name>
+		<course-mode>Online</course-mode>
+        <course-articles>200</course-articles>
+		<course-credits>4</course-credits>
+
+	</cs>
+	
+</christ>

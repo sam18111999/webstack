@@ -30,6 +30,26 @@
    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
    <![endif]-->
+   <style>
+      table,th,td
+{
+border:1px solid rgb(21, 255, 0);
+}
+th,td{
+   padding: 5px;
+}
+input[type=button], input[type=submit], input[type=reset] {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+
+   </style>
+
    </head>
    <body id="inner_page">
       <!-- header -->
@@ -87,7 +107,7 @@
             </div>
            </div>
         </div>
-
+       
       </header>
       <!-- end header -->
       
@@ -121,12 +141,80 @@
                           <ul><li>C Programming</li><li></li></ul>
                           <ul><li>C++</li><li></li></ul>
                          
+                         
                        </div>
                  </div>        
               </div> 
             </div>
          </div>
       </section>
+      <button type="button" onclick="loadXML()">DOM</button>
+      <br><br>
+      <table id="demo"></table>
+      <script>
+          function loadXML()
+          {
+              var xhttp=new XMLHttpRequest();
+              xhttp.onreadystatechange=function()
+              {
+                  if(this.readyState==4&&this.status==200)
+                  {
+                      myFunction(this);
+                  }
+              };
+              xhttp.open("GET","student.xml",false);
+              xhttp.send();
+          }
+          function myFunction(xml)
+          {
+              var i;
+              var xmlDoc=xml.responseXML;
+              var t="<tr><th>COURSE</th><th>CREDITS</th></tr>";
+              var x=xmlDoc.getElementsByTagName("cs");
+              for(i=0;i<x.length;i++)
+              {
+                  t +="<tr><td>" +
+                  x[i].getElementsByTagName("course-name")[0].childNodes[0].nodeValue +
+                  "</td><td>" +
+                  x[i].getElementsByTagName("course-credits")[0].childNodes[0].nodeValue +
+                  "</td></tr>";
+              }
+              document.getElementById("demo").innerHTML=t;
+          }
+      </script>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+          <script>
+              function load()
+              {
+                  
+                  var request;
+                  request=new XMLHttpRequest();
+                  request.onreadystatechange=function()
+                  {
+                      if(request.readyState==4)
+                      {
+                          var obj=JSON.parse(request.responseText);
+                          document.getElementById("Course").innerHTML=obj.Course;
+                          document.getElementById("Credits").innerHTML=obj.Credits;
+                      }
+                  };
+                  request.open("GET","course.json",true);
+                  request.send();
+              }
+          </script>
+      </head>
+      <body>
+          COURSE:<span id="Course"></span><br>
+          CREDITS:<span id="Credits"></span><br>
+          <button type="button" onclick="load()">JSON</button>
+      </body>
+      </html>
+      
       <!-- end section -->
   
       <!-- section -->

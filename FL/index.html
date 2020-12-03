@@ -190,7 +190,7 @@
             <div class="row">
                <div class="col-lg-12 text_align_center">
                   <div class="full heading_s1">
-                     <h2>Programming Languages</h2>
+                     <h2>Enter Your Details</h2>
                   </div>
                </div>
             </div>
@@ -198,9 +198,131 @@
               <div class="col-md-12 cours_timging_bg">
                  <div class="container">
                     <div class="time_table">
-                          <ul><li>Java</li><li></li></ul>
-                          <ul><li>C Programming</li><li></li></ul>
-                          <ul><li>C++</li><li></li></ul>
+                          
+                          <html> 
+    <head> 
+        <script> 
+            function Func() { 
+                var name =  
+                    document.forms["RegForm"]["Name"]; 
+                var email =  
+                    document.forms["RegForm"]["EMail"]; 
+                var phone =  
+                    document.forms["RegForm"]["Telephone"]; 
+                var what =  
+                    document.forms["RegForm"]["Subject"]; 
+                var password =  
+                    document.forms["RegForm"]["Password"]; 
+                var address =  
+                    document.forms["RegForm"]["Address"]; 
+  
+                if (name.value == "") { 
+                    window.alert("Please enter your name."); 
+                    name.focus(); 
+                    return false; 
+                } 
+  
+                if (address.value == "") { 
+                    window.alert("Please enter your address."); 
+                    address.focus(); 
+                    return false; 
+                } 
+  
+                if (email.value == "") { 
+                    window.alert( 
+                      "Please enter a valid e-mail address."); 
+                    email.focus(); 
+                    return false; 
+                } 
+  
+                if (phone.value == "") { 
+                    window.alert( 
+                      "Please enter your telephone number."); 
+                    phone.focus(); 
+                    return false; 
+                } 
+  
+                if (password.value == "") { 
+                    window.alert("Please enter your password"); 
+                    password.focus(); 
+                    return false; 
+                } 
+  
+                if (what.selectedIndex < 1) { 
+                    alert("Please enter your course."); 
+                    what.focus(); 
+                    return false; 
+                } 
+  
+                return true; 
+            } 
+        </script> 
+  
+        <style> 
+           
+            input[type=text] {
+  background-color: #3CBC8D;
+  color: white;
+}
+input[type=text]:focus {
+  background-color: lightblue;
+}
+            form { 
+                margin: 0 auto; 
+                width: 0 auto; 
+            } 
+            input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+        </style> 
+    </head> 
+  
+    <body> 
+        <form name="RegForm" action="/submit.php" 
+              onsubmit="return Func()" method="post"> 
+            <p>Name: <input type="text" 
+                            size="15" name="Name" /></p> 
+            <br /> 
+            <p>Address: <input type="text" 
+                               size="15" name="Address" /> 
+          </p> 
+            <br /> 
+            <p>E-mail Address: <input type="text" 
+                            size="15" name="EMail" /></p> 
+            <br /> 
+            <p>Password: <input type="text" 
+                         size="15" name="Password" /></p> 
+            <br /> 
+            <p>Telephone: <input type="text" 
+                        size="15" name="Telephone" /></p> 
+            <br /> 
+  
+            <p> 
+                SELECT YOUR COURSE 
+                <select type="text" value="" name="Subject"> 
+                    <option>Select-</option>
+                    <option>PYTHON</option> 
+                    <option>JAVA</option> 
+                    <option>C PROGRAMMING</option> 
+                    <option>C++</option> 
+                </select> 
+            </p> 
+            <br /> 
+            <p> 
+                <input type="submit" 
+                       value="SEND" name="Submit" /> 
+                <input type="reset" 
+                       value="RESET" name="Reset" /> 
+            </p> 
+        </form> 
+    </body> 
+</html> 
                          
                        </div>
                  </div>        
@@ -208,85 +330,7 @@
             </div>
          </div>
 
-   
-      <title>Form Validation</title>      
-      <script type = "text/javascript">
-         function validate() {
-      
-         if( document.myForm.Name.value == "" ) {
-            alert( "Please provide your name!" );
-            document.myForm.Name.focus() ;
-            return false;
-         }
-         
-         if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) ||
-            document.myForm.Zip.value.length != 5 ) {
-            
-            alert( "Please provide a zip in the format #####." );
-            document.myForm.Zip.focus() ;
-            return false;
-         }
-         if( document.myForm.Country.value == "-1" ) {
-            alert( "Please provide your country!" );
-            return false;
-         }
-         return( true );
-      }
-      function validateEmail() {
-         var emailID = document.myForm.EMail.value;
-         atpos = emailID.indexOf("@");
-         dotpos = emailID.lastIndexOf(".");
-         
-         if (atpos < 1 || ( dotpos - atpos < 2 )) {
-            alert("Please enter correct email ID")
-            document.myForm.EMail.focus() ;
-            return false;
-         }
-         return( true );
-      }
-      </script>      
-
-   
-   <body>
-      <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
-         <table cellspacing = "2" cellpadding = "2" border = "1">
-            
-            <tr>
-               <td align = "right">Name</td>
-               <td><input type = "text" name = "Name" /></td>
-            </tr>
-            
-            <tr>
-               <td align = "right">E-Mail</td>
-               <td><input type = "text" name = "EMail" /></td>
-            </tr>
-            
-            <tr>
-               <td align = "right">Zip Code</td>
-               <td><input type = "text" name = "Zip" /></td>
-            </tr>
-            
-            <tr>
-               <td align = "right">Course of your choice</td>
-               <td>
-                  <select name = "Country">
-                     <option value = "-1" selected>[choose yours]</option>
-                     <option value = "1">Python</option>
-                     <option value = "2">Java</option>
-                     <option value = "3">C Programming</option>
-                  </select>
-               </td>
-            </tr>
-            
-            <tr>
-               <td align = "right"></td>
-               <td><input type = "submit" value = "Submit" /></td>
-            </tr>
-            
-         </table>
-      </form>      
-   </body>
-
+  
       </section>
       <!-- end section -->
 
