@@ -1,0 +1,10 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+td   table,th,td
+{
+border:1px solid rgb(21, 255, 0);
+}
+th,td{
+   padding: 5px;
+}
